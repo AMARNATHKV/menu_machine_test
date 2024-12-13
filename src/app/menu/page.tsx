@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image'; // Import the Next.js Image component
+import Image from 'next/image';
 import ItemList from '@/components/ItemList';
 
 
@@ -38,7 +38,7 @@ export default function MenuPage() {
 
   return (
     <div>
-      {/* Header Section */}
+      
       <section
         className="text-center py-8 relative bg-cover bg-top"
         style={{

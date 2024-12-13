@@ -4,17 +4,16 @@ import Navbar from '../components/Navbar';
 import '../app/globals.css';
 import { useState, useEffect } from 'react';
 
-// Define the Menu type
+
 interface Menu {
   id: string;
   title: string;
-  content: string; // Add this if menus have associated content
+  content: string; 
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const [menus, setMenus] = useState<Menu[]>([]); // Use a specific type
-
-  // Fetch menus
+  const [menus, setMenus] = useState<Menu[]>([]); 
+  
   useEffect(() => {
     async function fetchMenus() {
       try {
@@ -40,20 +39,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body className="bg-gray-100 m-0 p-0">
-        {/* Navbar */}
+       
         <Navbar />
 
-        {/* Main content */}
+        
         <main className="min-h-screen">
           <div className=" mx-auto py-4 bg-black">
             <ul className="space-y-4">
               {menus.map((menu, index) => (
-                <li key={menu.id || `${menu.title}-${index}`} className=" p-4 rounded-lg bg-gray-900 shadow">
-                  {/* Display menu title without dropdown */}
+                <li key={menu.id || `${menu.title}-${index}`} >
+                 
                   <div className="flex justify-between items-center w-full">
                     <span className="text-lg font-medium">{menu.title}</span>
                   </div>
-                  {/* Display content directly without toggling */}
+                  
                   <div className="mt-4 text-gray-600">
                     <p>{menu.content}</p>
                   </div>
